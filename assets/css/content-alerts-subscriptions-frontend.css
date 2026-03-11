@@ -1,0 +1,117 @@
+/* Frontend styling for Content Alerts & Subscriptions */
+
+.content-alerts-subscriptions-dashboard {
+    margin: 20px 0;
+}
+
+.content-alerts-subscriptions-tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.content-alerts-subscriptions-tab {
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.content-alerts-subscriptions-tab:hover {
+    opacity: 1;
+}
+
+.content-alerts-subscriptions-tab.active {
+    opacity: 1;
+    border-bottom-color: var(--wp--preset--color--primary, #0073aa);
+    color: var(--wp--preset--color--primary, #0073aa);
+}
+
+.content-alerts-subscriptions-tab-content {
+    display: none;
+    animation: content-alerts-subscriptionsFadeIn 0.4s ease;
+}
+
+.content-alerts-subscriptions-tab-content.active {
+    display: block;
+}
+
+@keyframes content-alerts-subscriptionsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table styling - Minimalistic to adopt theme styles */
+.content-alerts-subscriptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.content-alerts-subscriptions-table th,
+.content-alerts-subscriptions-table td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-alerts-subscriptions-table th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+/* Button styling - Clean and Premium */
+.content-alerts-subscriptions-subscribe-btn {
+    padding: 12px 24px;
+    cursor: pointer;
+    background: var(--wp--preset--color--primary, #0073aa);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-alerts-subscriptions-subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+}
+
+.content-alerts-subscriptions-subscribe-btn.content-alerts-subscriptions-subscribed {
+    background: #f0f0f0;
+    color: #333;
+    box-shadow: none;
+}
+
+.content-alerts-subscriptions-subscribe-btn.content-alerts-subscriptions-subscribed:hover {
+    background: #e5e5e5;
+    color: #000;
+}
+
+.content-alerts-subscriptions-subscribe-btn.content-alerts-subscriptions-loading {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Generic layout helpers */
+.content-alerts-subscriptions-subscribe-wrapper {
+    margin: 1.5rem 0;
+}

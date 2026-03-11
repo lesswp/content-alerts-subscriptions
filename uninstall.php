@@ -1,10 +1,10 @@
 <?php
 /**
- * Notiva Uninstall
+ * Content Alerts & Subscriptions Uninstall
  *
- * Uninstalling Notiva deletes user subscriptions and plugin options.
+ * Uninstalling Content Alerts & Subscriptions deletes user subscriptions and plugin options.
  *
- * @package Notiva\Uninstall
+ * @package Content Alerts & Subscriptions\Uninstall
  */
 
 // If uninstall not called from WordPress, then exit.
@@ -15,10 +15,10 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 global $wpdb;
 
 // 1. Delete plugin options.
-delete_option( 'notiva_general_settings' );
-delete_option( 'notiva_email_settings' );
-delete_option( 'notiva_db_version' );
+delete_option( 'content_alerts_subscriptions_general_settings' );
+delete_option( 'content_alerts_subscriptions_email_settings' );
+delete_option( 'content_alerts_subscriptions_db_version' );
 
 // 2. Drop the custom database table.
-$table_name = $wpdb->prefix . 'notiva_subscriptions';
+$table_name = $wpdb->prefix . 'content_alerts_subscriptions_subscriptions';
 $wpdb->query( "DROP TABLE IF EXISTS {$table_name}" );
